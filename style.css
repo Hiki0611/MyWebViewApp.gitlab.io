@@ -1,122 +1,84 @@
-/* Общие стили */
-body {
-  font-family: Arial, sans-serif;
+/* Общий сброс стилей */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1, h2 {
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
   margin: 0;
+  padding: 0;
 }
 
-.container {
-  padding: 20px;
+header {
+  background: #2c3e50;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
 }
 
-/* Стили для навигационной панели */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0072ff;
-  color: white;
-  padding: 10px 20px;
-}
-
-.logo h1 {
-  font-size: 24px;
-  color: white;
-}
-
-.navbar-links {
-  display: flex;
-  align-items: center;
-}
-
-#schedule-form {
-  display: flex;
-  gap: 10px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-select, button {
-  padding: 5px;
-  font-size: 16px;
-}
-
-button {
-  background-color: #0072ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056cc;
-}
-
-/* Стили для таблицы */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-th {
-  background-color: #0072ff;
-  color: white;
-}
-
-/* Стили для модальных окон */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
+.navbar .logo h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+.navbar-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin: 0.5rem;
+}
+
+button {
+  background: linear-gradient(45deg, #1abc9c, #3498db);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
   cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-/* Стили для модального окна с книгами */
+button:hover {
+  background: linear-gradient(45deg, #16a085, #2980b9);
+}
+
+.container {
+  padding: 1rem;
+}
+
+/* Таблица */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+th {
+  background: #3498db;
+  color: white;
+}
+
+/* Модальное окно с книгами */
 .modal-books {
   display: none;
   position: fixed;
@@ -125,100 +87,154 @@ th {
   top: 0;
   width: 100%;
   height: 100%;
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
 }
 
 .modal-books-content {
-  background-color: white;
+  background-color: #fefefe;
+  margin: 10% auto;
   padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
+  border: 1px solid #888;
+  width: 80%;
   text-align: center;
+  border-radius: 8px;
 }
 
 .close-books {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
 }
 
-/* Стили для кнопок книг */
-.book-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.book-btn {
-  display: inline-block;
-  padding: 10px 20px;
+.close-books:hover, .close-books:focus {
+  color: black;
   text-decoration: none;
-  font-size: 16px;
-  color: white;
-  background: linear-gradient(45deg, #0072ff, #00c6ff);
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.book-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+/* Кнопки книг с градиентом */
+.modal-books-content ul {
+  list-style: none;
+  padding: 0;
 }
 
-/* Адаптивные стили для мобильных устройств */
+.modal-books-content ul li {
+  margin: 0.5rem 0;
+}
+
+.modal-books-content ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(45deg, #8e44ad, #3498db);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.modal-books-content ul li a:hover {
+  background: linear-gradient(45deg, #732d91, #2c81ba);
+}
+
+/* Модальное окно автора */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Адаптивность для телефонов */
 @media (max-width: 768px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-  }
-
-  .navbar {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo {
+  header {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 1rem 0;
+  }
+
+  .navbar .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .navbar-links {
-    display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 1rem;
+  }
+
+  .navbar .logo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
   }
 
   #schedule-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-  }
-
-  #schedule-form .form-group {
-    width: 100%;
-    text-align: center;
-  }
-
-  #show-schedule {
-    margin-top: 10px;
   }
 
   .container {
-    display: none;
+    padding: 0.5rem;
+  }
+
+  button {
+    width: 80%;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Центрирование заголовка и кнопок на телефоне */
+@media (max-width: 768px) {
+  .logo h1 {
+    position: relative;
+    top: -20%;
+    text-align: center;
+  }
+
+  .navbar-links {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    margin: 10px 0;
   }
 }
