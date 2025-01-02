@@ -78,7 +78,7 @@ button:hover {
 
 /* Стили для основного контента */
 .container {
-  background-color: #81d7c2;
+  background-color: #fff;
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -118,6 +118,10 @@ th {
 
 tbody tr:nth-child(even) {
   background-color: #b2dfdb; /* Светлый оттенок призмаринового */
+}
+
+tbody tr:hover {
+  background-color: #80cbc4; /* Немного темнее для эффекта наведения */
 }
 
 /* Анимация для тени вокруг таблицы */
@@ -210,75 +214,103 @@ tbody tr:nth-child(even) {
   cursor: pointer;
 }
 
-/* Стили для кнопки Kitoblar */
-#books-btn {
-  margin: 20px auto;
-  display: block;
-  padding: 10px 20px;
-  background-color: #028482;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .navbar-links form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .navbar-links button {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .container {
+    width: 90%;
+    margin-top: 15px;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
 }
 
-#books-btn:hover {
-  background-color: #017367;
-}
-
-/* Стили для модального окна с книгами */
+/* Стиль для модального окна с книгами */
 .modal-books {
-  display: none;
+  display: none; /* Скрыть модальное окно по умолчанию */
   position: fixed;
-  top: 0;
+  z-index: 1;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Содержание модального окна */
 .modal-books-content {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  position: relative;
-  width: 60%;
+  background: linear-gradient(135deg, #028482, #ff4b5c); /* Призмариновый градиент */
+  color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center; /* Центрирование текста */
 }
 
-.modal-books-content ul {
-  list-style: none;
-  padding-left: 0;
+.modal-books-content h2 {
+  margin-bottom: 20px;
 }
 
-.modal-books-content ul li {
-  margin: 10px 0;
-}
-
-.modal-books-content ul li a {
-  text-decoration: none;
-  color: #028482;
-  font-size: 1.1rem;
-  padding: 8px 12px;
-  background-color: #e0f2f1;
-  border-radius: 5px;
+/* Кнопки для скачивания книг */
+.book-button {
   display: inline-block;
+  background: linear-gradient(135deg, #028482, #026c62); /* Призмариновый градиент */
+  color: white;
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.modal-books-content ul li a:hover {
-  background-color: #80cbc4;
+.book-button:hover {
+  background: linear-gradient(135deg, #026c62, #028482); /* Изменение градиента при наведении */
+  transform: scale(1.05); /* Легкое увеличение при наведении */
 }
 
-/* Стиль для кнопки закрытия модального окна */
+/* Кнопка закрытия модального окна */
 .close-books {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
   position: absolute;
   top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
+  right: 15px;
   cursor: pointer;
-  color: #333;
+}
+
+.close-books:hover,
+.close-books:focus {
+  color: #ddd;
+  text-decoration: none;
+  cursor: pointer;
 }
