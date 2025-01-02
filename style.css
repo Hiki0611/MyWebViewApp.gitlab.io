@@ -169,7 +169,7 @@ tbody tr:hover {
   background-color: #017367;
 }
 
-/* Модальное окно для "Muallif haqida" */
+/* Модальное окно */
 .modal {
   display: none; /* Скрыть модальное окно по умолчанию */
   position: fixed;
@@ -214,7 +214,7 @@ tbody tr:hover {
   cursor: pointer;
 }
 
-/* Кнопка "Kitoblar" */
+/* Стиль кнопки "Kitoblar" */
 #books-btn {
   margin: 20px auto;
   display: block;
@@ -232,7 +232,7 @@ tbody tr:hover {
   background-color: #017367;
 }
 
-/* Модальное окно для выбора книг */
+/* Модальное окно с книгами */
 #books-modal {
   display: none; /* Скрыть модальное окно по умолчанию */
   position: fixed;
@@ -245,34 +245,20 @@ tbody tr:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-#books-modal .modal-content {
-  background: #fff;
-  color: #333;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 600px;
-  text-align: center; /* Центрирование текста */
+.modal-content button {
+  background-color: #028482;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
-#books-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#books-list li {
-  margin: 10px 0;
-}
-
-#books-list a {
-  color: #028482;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-#books-list a:hover {
-  text-decoration: underline;
+.modal-content button:hover {
+  background-color: #017367;
 }
 
 /* Адаптивность для мобильных устройств */
