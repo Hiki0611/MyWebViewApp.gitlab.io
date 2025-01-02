@@ -121,9 +121,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Перечень доступных книг (например, можно хранить имена файлов в массиве)
     const books = [
-      "Book 1.pdf",
-      "Book 2.pdf",
-      "Book 3.pdf"
+      "Book-1.pdf",
+      "Book-2.pdf",
+      "Book-3.pdf"
     ];
 
     books.forEach(book => {
