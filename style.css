@@ -117,11 +117,119 @@ th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #b2dfdb; /* Светлый оттенок бирюзового */
+  background-color: #b2dfdb; /* Светлый оттенок призмаринового */
+}
+
+/* Анимация для тени вокруг таблицы */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 20px rgba(2, 132, 130, 0.4), 0 0 30px 30px rgba(255, 75, 92, 0.4); /* Тень с эффектом мягкости */
+  animation: shadowAnimation 2.7s ease infinite;
+}
+
+/* Анимация для тени */
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: 0 0 20px 20px rgba(2, 132, 130, 0.4), 0 0 30px 30px rgba(255, 75, 92, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 50px 50px rgba(2, 132, 130, 0.2), 0 0 70px 70px rgba(255, 75, 92, 0.2); /* Увеличиваем тень и уменьшаем прозрачность */
+  }
+  100% {
+    box-shadow: 0 0 20px 20px rgba(2, 132, 130, 0.4), 0 0 30px 30px rgba(255, 75, 92, 0.4);
+  }
+}
+
+/* Стиль кнопки "Muallif haqida" */
+#author-btn {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #028482;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+#author-btn:hover {
+  background-color: #017367;
+}
+
+/* Модальное окно */
+.modal {
+  display: none; /* Скрыть модальное окно по умолчанию */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #028482, #ff4b5c); /* Синий-призмариновый и красный градиент */
+  color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center; /* Центрирование текста */
+}
+
+/* Стиль текста в модальном окне */
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Стиль для кнопки закрытия модального окна */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #ddd;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Стили для кнопки Kitoblar */
+#books-btn {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #028482;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+#books-btn:hover {
+  background-color: #017367;
 }
 
 /* Стили для модального окна с книгами */
-.modal {
+.modal-books {
   display: none;
   position: fixed;
   top: 0;
@@ -134,7 +242,7 @@ tbody tr:nth-child(even) {
   z-index: 1000;
 }
 
-.modal-content {
+.modal-books-content {
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
@@ -142,25 +250,16 @@ tbody tr:nth-child(even) {
   width: 60%;
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-ul#books-list {
+.modal-books-content ul {
   list-style: none;
   padding-left: 0;
 }
 
-ul#books-list li {
+.modal-books-content ul li {
   margin: 10px 0;
 }
 
-ul#books-list li a {
+.modal-books-content ul li a {
   text-decoration: none;
   color: #028482;
   font-size: 1.1rem;
@@ -170,6 +269,16 @@ ul#books-list li a {
   display: inline-block;
 }
 
-ul#books-list li a:hover {
+.modal-books-content ul li a:hover {
   background-color: #80cbc4;
+}
+
+/* Стиль для кнопки закрытия модального окна */
+.close-books {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
 }
