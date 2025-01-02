@@ -90,4 +90,50 @@ document.addEventListener("DOMContentLoaded", function() {
       authorModal.style.display = "none";
     }
   });
+
+  // Функция для открытия модального окна "Kitoblar"
+  const booksBtn = document.getElementById('books-btn');
+  const booksModal = document.getElementById('books-modal');
+  const closeBooksModal = booksModal.querySelector('.close');
+
+  // Открытие модального окна "Kitoblar"
+  booksBtn.addEventListener('click', function() {
+    booksModal.style.display = "block";
+    loadBooks();  // Загружаем список книг при открытии модального окна
+  });
+
+  // Закрытие модального окна "Kitoblar"
+  closeBooksModal.addEventListener('click', function() {
+    booksModal.style.display = "none";
+  });
+
+  // Закрытие модального окна "Kitoblar" при клике вне его
+  window.addEventListener('click', function(event) {
+    if (event.target === booksModal) {
+      booksModal.style.display = "none";
+    }
+  });
+
+  // Функция для загрузки списка книг
+  function loadBooks() {
+    const booksList = document.getElementById('books-list');
+    booksList.innerHTML = ''; // Очистить список перед загрузкой
+
+    // Перечень доступных книг (например, можно хранить имена файлов в массиве)
+    const books = [
+      "Book 1.pdf",
+      "Book 2.pdf",
+      "Book 3.pdf"
+    ];
+
+    books.forEach(book => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `./books/${book}`;
+      link.textContent = book;
+      link.download = book; // Атрибут для скачивания файла
+      li.appendChild(link);
+      booksList.appendChild(li);
+    });
+  }
 });
