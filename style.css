@@ -16,7 +16,7 @@ body {
 
 /* Навигационная панель */
 header {
-  background-color: #2f8f8f; /* Тёмный бирюзовый */
+  background-color: #40b7a1; /* Тёмный бирюзовый */
   padding: 15px;
 }
 
@@ -58,13 +58,13 @@ select {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #f0f4f8;
+  background-color: #19b0a0;
 }
 
 button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: #028482; /* Призмариновый */
+  background-color: #19b0a0; /* Призмариновый */
   color: white;
   border: none;
   border-radius: 5px;
@@ -73,7 +73,7 @@ button {
 }
 
 button:hover {
-  background-color: #017367;
+  background-color: #19b0a0;
 }
 
 /* Стили для основного контента */
