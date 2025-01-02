@@ -16,7 +16,7 @@ body {
 
 /* Навигационная панель */
 header {
-  background-color: #40b7a1; /* Тёмный бирюзовый */
+  background-color: #028482; /* Тёмный бирюзовый */
   padding: 15px;
 }
 
@@ -58,13 +58,13 @@ select {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #19b0a0;
+  background-color: #fff;
 }
 
 button {
   padding: 10px 20px;
   font-size: 1.2rem;
-  background-color: #19b0a0; /* Призмариновый */
+  background-color: #0bceba; /* Призмариновый */
   color: white;
   border: none;
   border-radius: 5px;
