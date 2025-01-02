@@ -72,20 +72,16 @@
     </div>
   </div>
 
-  <!-- Кнопка "Kitoblar" и модальное окно -->
+  <!-- Кнопка "Kitoblar" для скачивания -->
   <button id="books-btn">Kitoblar</button>
 
-  <!-- Модальное окно для книг -->
   <div id="books-modal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Kitoblar</h2>
-      <ul id="books-list">
-        <!-- Список книг будет загружаться сюда -->
-        <li><a href="./books/Book-1.pdf" target="_blank">Kitob 1</a></li>
-        <li><a href="./books/Book-2.pdf" target="_blank">Kitob 2</a></li>
-        <li><a href="./books/Book-3.pdf" target="_blank">Kitob 3</a></li>
-      </ul>
+      <span id="close-books-btn" class="close">&times;</span>
+      <h2>Kitoblar:</h2>
+      <button class="book-button" data-book="Book-1.pdf">Book 1</button>
+      <button class="book-button" data-book="Book-2.pdf">Book 2</button>
+      <button class="book-button" data-book="Book-3.pdf">Book 3</button>
     </div>
   </div>
 
