@@ -60,7 +60,23 @@
     </table>
   </div>
 
-  <!-- Knpka "Muallif haqida" va modali oynasi -->
+  <!-- Кнопка для открытия списка книг -->
+  <button id="books-btn">Kitoblar</button>
+
+  <!-- Модальное окно с книгами -->
+  <div id="books-modal" class="modal-books">
+    <div class="modal-books-content">
+      <span id="close-books" class="close-books">&times;</span>
+      <h2>Kitoblar ro'yxati</h2>
+      <ul>
+        <li><a href="https://github.com/Hiki0611/MyWebViewApp.gitlab.io/raw/main/books/Book-1.pdf" download>Book-1.pdf</a></li>
+        <li><a href="https://github.com/Hiki0611/MyWebViewApp.gitlab.io/raw/main/books/Book-2.pdf" download>Book-2.pdf</a></li>
+        <li><a href="https://github.com/Hiki0611/MyWebViewApp.gitlab.io/raw/main/books/Book-3.pdf" download>Book-3.pdf</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Кнопка "Muallif haqida" и модальное окно -->
   <button id="author-btn">Muallif haqida</button>
 
   <div id="author-modal" class="modal">
@@ -69,19 +85,6 @@
       <h2>Muallif haqida</h2>
       <p>Ushbu dastur Farg`ona viloyati, So`x tumanidagi Texnikumning 1 kurs 3-24 guruh talabasi GOFURJONOV HIKMATULLO tomonidan Texnikum talabalari uchun yaratildi.</p>
       <p>Telefon raqam: +998 99 141 98 36</p>
-    </div>
-  </div>
-
-  <!-- Кнопка "Kitoblar" для скачивания -->
-  <button id="books-btn">Kitoblar</button>
-
-  <div id="books-modal" class="modal">
-    <div class="modal-content">
-      <span id="close-books-btn" class="close">&times;</span>
-      <h2>Kitoblar:</h2>
-      <button class="book-button" data-book="Book-1.pdf">Book 1</button>
-      <button class="book-button" data-book="Book-2.pdf">Book 2</button>
-      <button class="book-button" data-book="Book-3.pdf">Book 3</button>
     </div>
   </div>
 
