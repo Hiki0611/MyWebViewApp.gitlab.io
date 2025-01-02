@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
     books.forEach(book => {
       const listItem = document.createElement('li');
       const link = document.createElement('a');
-      link.href = `https://github.com/Hiki0611/MyWebViewApp.gitlab.io/blob/main/books/${book}?raw=true`;
+      link.href = `https://raw.githubusercontent.com/Hiki0611/MyWebViewApp.gitlab.io/main/books/${book}`;
       link.download = book;
       link.textContent = book;
       listItem.appendChild(link);
