@@ -1,52 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My New Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой сайт</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Навигация -->
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <h1>My New Website</h1>
-            </div>
-            <div class="navbar-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <!-- Гамбургер-меню -->
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Боковое меню -->
-    <div class="sidebar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+  <!-- Навигационная панель -->
+  <header>
+    <div class="navbar">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="logo">
+        <h1>Мой сайт</h1>
+      </div>
     </div>
+  </header>
 
-    <!-- Основной контент -->
-    <div class="container">
-        <h2>Welcome to My New Website</h2>
-        <p>This is the main content area where you can add anything you'd like.</p>
-    </div>
+  <!-- Боковое меню -->
+  <div id="sideMenu" class="side-menu">
+    <ul>
+      <li><a href="#">Главная</a></li>
+      <li><a href="#">О сайте</a></li>
+      <li><a href="#">Контакты</a></li>
+      <li><a href="#">Регистрация</a></li>
+      <li><a href="#">Вход</a></li>
+    </ul>
+  </div>
 
-    <!-- Подключение JS -->
-    <script src="script.js"></script>
+  <div class="content">
+    <h2>Добро пожаловать на мой сайт!</h2>
+    <p>Здесь будет контент сайта.</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
