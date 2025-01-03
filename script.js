@@ -1,9 +1,12 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Переключение для гамбургер-меню
-    const hamburger = document.querySelector('.hamburger');
-    const sidebar = document.querySelector('.sidebar');
+// Функция для открытия/закрытия бокового меню
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const currentPosition = sideMenu.style.left;
 
-    hamburger.addEventListener('click', () => {
-        sidebar.classList.toggle('open');  // Открытие/закрытие бокового меню
-    });
-});
+  // Если меню скрыто, показываем его, если открыто - скрываем
+  if (currentPosition === '-250px' || currentPosition === '') {
+    sideMenu.style.left = '0';
+  } else {
+    sideMenu.style.left = '-250px';
+  }
+}
