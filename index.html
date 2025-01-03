@@ -1,141 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Site</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Стиль для кнопки гамбургера */
-    .hamburger {
-      display: none; /* Прячем по умолчанию */
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      padding: 10px;
-    }
-
-    /* Стили бокового меню */
-    .sidebar {
-      height: 100%;
-      width: 250px;
-      position: fixed;
-      top: 0;
-      left: -250px; /* Скрываем меню за пределами экрана */
-      background-color: #333;
-      color: white;
-      transition: 0.3s;
-      padding-top: 60px;
-    }
-
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .sidebar ul li {
-      padding: 8px 16px;
-      text-align: left;
-    }
-
-    .sidebar ul li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .sidebar ul li a:hover {
-      background-color: #575757;
-    }
-
-    /* Когда меню открыто */
-    .sidebar.open {
-      left: 0; /* Меню появляется */
-    }
-
-    /* Адаптивность для мобильных */
-    @media screen and (max-width: 768px) {
-      .navbar-links {
-        display: none; /* Прячем ссылки на мобильных устройствах */
-      }
-
-      .hamburger {
-        display: block; /* Показываем кнопку гамбургера */
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My New Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="logo">
-        <h1>My Site</h1>
-      </div>
-      <div class="navbar-links">
-        <form>
-          <div class="form-group">
-            <label for="group">Group:</label>
-            <select id="group">
-              <option value="group1">Group 1</option>
-              <option value="group2">Group 2</option>
-              <!-- другие опции -->
-            </select>
-          </div>
-          <button>Submit</button>
-        </form>
-      </div>
-      <!-- Кнопка гамбургера -->
-      <div class="hamburger" onclick="toggleMenu()">
-        &#9776; <!-- Символ гамбургера -->
-      </div>
-    </div>
-  </header>
-
-  <!-- Боковое меню -->
-  <div class="sidebar" id="sidebar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-      <!-- добавьте дополнительные пункты меню -->
-    </ul>
-  </div>
-
-  <!-- Основной контент -->
-  <div class="wrapper">
-    <div class="card-switch">
-      <label class="switch">
-        <input type="checkbox" class="toggle">
-        <span class="slider"></span>
-        <span class="card-side"></span>
-        <div class="flip-card__inner">
-          <div class="flip-card__front">
-            <div class="title">Log in</div>
-            <form class="flip-card__form" action="">
-              <input class="flip-card__input" name="email" placeholder="Email" type="email">
-              <input class="flip-card__input" name="password" placeholder="Password" type="password">
-              <button class="flip-card__btn">Let`s go!</button>
-            </form>
-          </div>
-          <div class="flip-card__back">
-            <div class="title">Sign up</div>
-            <form class="flip-card__form" action="">
-              <input class="flip-card__input" placeholder="Name" type="name">
-              <input class="flip-card__input" name="email" placeholder="Email" type="email">
-              <input class="flip-card__input" name="password" placeholder="Password" type="password">
-              <button class="flip-card__btn">Confirm!</button>
-            </form>
-          </div>
+    <!-- Навигация -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h1>My New Website</h1>
+            </div>
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- Гамбургер-меню -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </label>
-    </div>
-  </div>
+    </header>
 
-  <script>
-    // Функция для открытия и закрытия бокового меню
-    function toggleMenu() {
-      const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('open'); // Добавляем или убираем класс "open"
-    }
-  </script>
+    <!-- Боковое меню -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="container">
+        <h2>Welcome to My New Website</h2>
+        <p>This is the main content area where you can add anything you'd like.</p>
+    </div>
+
+    <!-- Подключение JS -->
+    <script src="script.js"></script>
 </body>
 </html>
