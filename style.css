@@ -1,4 +1,4 @@
-/* Общий сброс стилей */
+/* Сброс стилей */
 * {
   margin: 0;
   padding: 0;
@@ -6,235 +6,245 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+/* Навигационная панель */
 header {
-  background: #2c3e50;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+  background-color: #2f8f8f; /* Тёмный бирюзовый */
+  padding: 15px;
 }
 
 .navbar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .navbar .logo h1 {
-  font-size: 2rem;
-  margin: 0;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .navbar-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+}
+
+.navbar-links form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .form-group {
-  margin: 0.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  color: #fff;
+}
+
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f4f8;
 }
 
 button {
-  background: linear-gradient(45deg, #1abc9c, #3498db);
-  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #028482; /* Призмариновый */
+  color: white;
   border: none;
-  padding: 0.7rem 1.5rem;
-  cursor: pointer;
-  font-size: 1rem;
   border-radius: 5px;
-  transition: background 0.3s;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background: linear-gradient(45deg, #16a085, #2980b9);
+  background-color: #017367;
 }
 
+/* Стили для основного контента */
 .container {
-  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 900px;
+  margin: 30px auto;
+  flex: 1;
+  position: relative; /* Для анимации тени */
 }
 
-/* Таблица */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Изменение цветов таблицы на серо-призмариновый */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 20px;
+  background-color: #c6e4e2; /* Серо-призмариновый */
+  border-radius: 8px; /* Закругление углов */
 }
 
 th, td {
+  padding: 12px;
+  text-align: center;
   border: 1px solid #ddd;
-  padding: 0.8rem;
-  text-align: left;
 }
 
 th {
-  background: #3498db;
+  background-color: #028482; /* Призмариновый */
   color: white;
 }
 
-/* Модальное окно с книгами */
-.modal-books {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+tbody tr:nth-child(even) {
+  background-color: #b2dfdb; /* Светлый оттенок призмаринового */
 }
 
-.modal-books-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  text-align: center;
+tbody tr:hover {
+  background-color: #80cbc4; /* Немного темнее для эффекта наведения */
+}
+
+/* Анимация для тени вокруг таблицы */
+.container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1;
   border-radius: 8px;
+  box-shadow: 0 0 20px 20px rgba(2, 132, 130, 0.4), 0 0 30px 30px rgba(255, 75, 92, 0.4); /* Тень с эффектом мягкости */
+  animation: shadowAnimation 2.7s ease infinite;
 }
 
-.close-books {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+/* Анимация для тени */
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: 0 0 20px 20px rgba(2, 132, 130, 0.4), 0 0 30px 30px rgba(255, 75, 92, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 50px 50px rgba(2, 132, 130, 0.2), 0 0 70px 70px rgba(255, 75, 92, 0.2); /* Увеличиваем тень и уменьшаем прозрачность */
+  }
+  100% {
+    box-shadow: 0 0 20px 20px rgba(2, 132, 130, 0.4), 0 0 30px 30px rgba(255, 75, 92, 0.4);
+  }
 }
 
-.close-books:hover, .close-books:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Кнопки книг с градиентом */
-.modal-books-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.modal-books-content ul li {
-  margin: 0.5rem 0;
-}
-
-.modal-books-content ul li a {
-  display: inline-block;
-  text-decoration: none;
+/* Стиль кнопки "Muallif haqida" */
+#author-btn {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #028482;
   color: white;
-  padding: 0.7rem 1.5rem;
-  background: linear-gradient(45deg, #8e44ad, #3498db);
+  border: none;
   border-radius: 5px;
+  cursor: pointer;
   font-size: 1rem;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
-.modal-books-content ul li a:hover {
-  background: linear-gradient(45deg, #732d91, #2c81ba);
+#author-btn:hover {
+  background-color: #017367;
 }
 
-/* Модальное окно автора */
+/* Модальное окно */
 .modal {
-  display: none;
+  display: none; /* Скрыть модальное окно по умолчанию */
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background: linear-gradient(135deg, #028482, #ff4b5c); /* Синий-призмариновый и красный градиент */
+  color: white;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
+  border-radius: 10px;
   width: 80%;
-  text-align: center;
-  border-radius: 8px;
+  max-width: 600px;
+  text-align: center; /* Центрирование текста */
 }
 
+/* Стиль текста в модальном окне */
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Стиль для кнопки закрытия модального окна */
 .close {
-  color: #aaa;
+  color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
-  cursor: pointer;
 }
 
-.close:hover, .close:focus {
-  color: black;
+.close:hover,
+.close:focus {
+  color: #ddd;
   text-decoration: none;
   cursor: pointer;
 }
 
-/* Адаптивность для телефонов */
-@media (max-width: 768px) {
-  header {
-    text-align: center;
-    padding: 1rem 0;
-  }
-
-  .navbar .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .navbar-links {
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .navbar-links form {
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
   }
 
-  .navbar .logo h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+  .form-group {
+    width: 100%;
   }
 
-  #schedule-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .navbar-links button {
+    width: 100%;
+    margin-top: 15px;
   }
 
   .container {
-    padding: 0.5rem;
+    width: 90%;
+    margin-top: 15px;
+    padding: 20px;
   }
 
-  button {
-    width: 80%;
-    margin: 0.5rem 0;
-  }
-}
-
-/* Центрирование заголовка и кнопок на телефоне */
-@media (max-width: 768px) {
-  .logo h1 {
-    position: relative;
-    top: -20%;
-    text-align: center;
+  h2 {
+    font-size: 1.5rem;
   }
 
-  .navbar-links {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    flex-direction: column;
-    align-items: center;
+  table {
+    font-size: 0.9rem;
   }
 
-  button {
-    margin: 10px 0;
+  th, td {
+    padding: 10px;
   }
 }
