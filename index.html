@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой сайт</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт с меню</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Навигационная панель -->
-  <header>
-    <div class="navbar">
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <div class="logo">
-        <h1>Мой сайт</h1>
-      </div>
+
+    <header>
+        <div class="hamburger">&#9776;</div>
+        <div class="logo">
+            <h1>Мой Сайт</h1>
+        </div>
+    </header>
+
+    <!-- Боковое меню -->
+    <div class="side-menu">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
     </div>
-  </header>
 
-  <!-- Боковое меню -->
-  <div id="sideMenu" class="side-menu">
-    <ul>
-      <li><a href="#">Главная</a></li>
-      <li><a href="#">О сайте</a></li>
-      <li><a href="#">Контакты</a></li>
-      <li><a href="#">Регистрация</a></li>
-      <li><a href="#">Вход</a></li>
-    </ul>
-  </div>
+    <!-- Основной контент -->
+    <div class="content">
+        <h2>Добро пожаловать на сайт!</h2>
+    </div>
 
-  <div class="content">
-    <h2>Добро пожаловать на мой сайт!</h2>
-    <p>Здесь будет контент сайта.</p>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
