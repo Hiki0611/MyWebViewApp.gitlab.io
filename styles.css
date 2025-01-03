@@ -33,7 +33,7 @@ header {
 .hamburger {
   font-size: 2rem;
   cursor: pointer;
-  display: none;
+  display: block;
 }
 
 .logo h1 {
