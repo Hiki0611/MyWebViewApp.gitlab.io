@@ -26,13 +26,13 @@ header {
   width: 100%;
 }
 
-/* Кнопка гамбургера */
+/* Кнопка гамбургера (перемещена на правую сторону) */
 .hamburger {
   font-size: 2rem;
   cursor: pointer;
   display: block;
   position: absolute;
-  left: 20px;  /* Перемещаем кнопку гамбургера влево */
+  right: 20px;  /* Перемещаем кнопку гамбургера вправо */
   top: 50%;
   transform: translateY(-50%);
 }
