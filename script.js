@@ -1,8 +1,13 @@
-// Получаем элементы
-const hamburger = document.querySelector('.hamburger');
-const sideMenu = document.querySelector('.side-menu');
-
-// Открытие/закрытие меню
-hamburger.addEventListener('click', () => {
-  sideMenu.style.left = sideMenu.style.left === '0px' ? '-250px' : '0px';
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const sideMenu = document.querySelector('.side-menu');
+    
+    // Функция для открытия/закрытия меню
+    hamburger.addEventListener('click', function() {
+        if (sideMenu.style.left === '0px') {
+            sideMenu.style.left = '-250px'; // Скрываем меню
+        } else {
+            sideMenu.style.left = '0px'; // Показываем меню
+        }
+    });
 });
