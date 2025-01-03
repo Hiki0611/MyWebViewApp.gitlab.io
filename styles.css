@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
 }
 
 /* Навигационная панель */
@@ -21,27 +22,26 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-/* Выравнивание элементов навбара */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
   width: 100%;
 }
 
+/* Кнопка гамбургера */
 .hamburger {
   font-size: 2rem;
   cursor: pointer;
   display: block;
   position: absolute;
   left: 20px;  /* Перемещаем кнопку гамбургера влево */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+/* Логотип */
 .logo h1 {
   color: white;
   font-size: 1.5rem;
+  margin-left: 60px; /* Отступ для логотипа */
 }
 
 /* Боковое меню */
@@ -53,13 +53,15 @@ header {
   height: 100%;
   background-color: #2f8f8f;
   padding-top: 60px;
-  transition: 0.3s;
+  transition: 0.3s ease-in-out;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Скрытые ссылки меню */
 .side-menu ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .side-menu ul li {
@@ -79,12 +81,14 @@ header {
   background-color: #017367;
 }
 
+/* Контент */
 .content {
   padding: 20px;
   flex: 1;
   text-align: center;
 }
 
+/* Для мобильных устройств */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
