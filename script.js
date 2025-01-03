@@ -1,12 +1,8 @@
-// Функция для открытия/закрытия бокового меню
-function toggleMenu() {
-  const sideMenu = document.getElementById('sideMenu');
-  const currentPosition = sideMenu.style.left;
+// Получаем элементы
+const hamburger = document.querySelector('.hamburger');
+const sideMenu = document.querySelector('.side-menu');
 
-  // Если меню скрыто, показываем его, если открыто - скрываем
-  if (currentPosition === '-250px' || currentPosition === '') {
-    sideMenu.style.left = '0';
-  } else {
-    sideMenu.style.left = '-250px';
-  }
-}
+// Открытие/закрытие меню
+hamburger.addEventListener('click', () => {
+  sideMenu.style.left = sideMenu.style.left === '0px' ? '-250px' : '0px';
+});
