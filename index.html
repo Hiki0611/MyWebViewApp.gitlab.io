@@ -1,77 +1,141 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darslar jadvali</title>
-  <link rel="stylesheet" href="style.css">
+  <title>My Site</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Стиль для кнопки гамбургера */
+    .hamburger {
+      display: none; /* Прячем по умолчанию */
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    /* Стили бокового меню */
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px; /* Скрываем меню за пределами экрана */
+      background-color: #333;
+      color: white;
+      transition: 0.3s;
+      padding-top: 60px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      padding: 8px 16px;
+      text-align: left;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #575757;
+    }
+
+    /* Когда меню открыто */
+    .sidebar.open {
+      left: 0; /* Меню появляется */
+    }
+
+    /* Адаптивность для мобильных */
+    @media screen and (max-width: 768px) {
+      .navbar-links {
+        display: none; /* Прячем ссылки на мобильных устройствах */
+      }
+
+      .hamburger {
+        display: block; /* Показываем кнопку гамбургера */
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
+    <div class="navbar">
       <div class="logo">
-        <h1>Darslar jadvali</h1>
+        <h1>My Site</h1>
       </div>
       <div class="navbar-links">
-        <form id="schedule-form">
+        <form>
           <div class="form-group">
-            <label for="course">Kurs:</label>
-            <select id="course">
-              <option value="1-course">Kurs 1</option>
-              <option value="2-course">Kurs 2</option>
+            <label for="group">Group:</label>
+            <select id="group">
+              <option value="group1">Group 1</option>
+              <option value="group2">Group 2</option>
+              <!-- другие опции -->
             </select>
           </div>
-
-          <div class="form-group">
-            <label for="group">Guruh:</label>
-            <select id="group"></select>
-          </div>
-
-          <div class="form-group">
-            <label for="day">Kun:</label>
-            <select id="day">
-              <option value="Monday">Dushanba</option>
-              <option value="Tuesday">Seshanba</option>
-              <option value="Wednesday">Chorshanba</option>
-              <option value="Thursday">Payshanba</option>
-              <option value="Friday">Juma</option>
-              <option value="Saturday">Shanba</option>
-            </select>
-          </div>
-
-          <button type="button" id="show-schedule">Jadvalni ko'rsatish</button>
+          <button>Submit</button>
         </form>
       </div>
-    </nav>
+      <!-- Кнопка гамбургера -->
+      <div class="hamburger" onclick="toggleMenu()">
+        &#9776; <!-- Символ гамбургера -->
+      </div>
+    </div>
   </header>
 
-  <div class="container">
-    <h2>Jadval:</h2>
-    <table id="schedule-table">
-      <thead>
-        <tr>
-          <th>Dars nomi</th>
-          <th>Dars vaqti</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Jadval bu yerga yuklanadi -->
-      </tbody>
-    </table>
+  <!-- Боковое меню -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+      <!-- добавьте дополнительные пункты меню -->
+    </ul>
   </div>
 
-  <!-- Knpka "Muallif haqida" va modali oynasi -->
-  <button id="author-btn">Muallif haqida</button>
-
-  <div id="author-modal" class="modal">
-    <div class="modal-content">
-      <span id="close-btn" class="close">&times;</span>
-      <h2>Muallif haqida</h2>
-      <p>Ushbu dastur Farg`ona viloyati, So`x tumanidagi Texnikumning 1 kurs 3-24 guruh talabasi GOFURJONOV HIKMATULLO tomonidan Texnikum talabalari uchun yaratildi.</p>
-      <p>Telefon raqam: +998 99 141 98 36</p>
+  <!-- Основной контент -->
+  <div class="wrapper">
+    <div class="card-switch">
+      <label class="switch">
+        <input type="checkbox" class="toggle">
+        <span class="slider"></span>
+        <span class="card-side"></span>
+        <div class="flip-card__inner">
+          <div class="flip-card__front">
+            <div class="title">Log in</div>
+            <form class="flip-card__form" action="">
+              <input class="flip-card__input" name="email" placeholder="Email" type="email">
+              <input class="flip-card__input" name="password" placeholder="Password" type="password">
+              <button class="flip-card__btn">Let`s go!</button>
+            </form>
+          </div>
+          <div class="flip-card__back">
+            <div class="title">Sign up</div>
+            <form class="flip-card__form" action="">
+              <input class="flip-card__input" placeholder="Name" type="name">
+              <input class="flip-card__input" name="email" placeholder="Email" type="email">
+              <input class="flip-card__input" name="password" placeholder="Password" type="password">
+              <button class="flip-card__btn">Confirm!</button>
+            </form>
+          </div>
+        </div>
+      </label>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Функция для открытия и закрытия бокового меню
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open'); // Добавляем или убираем класс "open"
+    }
+  </script>
 </body>
 </html>
