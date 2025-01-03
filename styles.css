@@ -23,6 +23,7 @@ header {
   align-items: center;
 }
 
+/* Выравнивание элементов навбара */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -34,6 +35,8 @@ header {
   font-size: 2rem;
   cursor: pointer;
   display: block;
+  position: absolute;
+  left: 20px;  /* Перемещаем кнопку гамбургера влево */
 }
 
 .logo h1 {
